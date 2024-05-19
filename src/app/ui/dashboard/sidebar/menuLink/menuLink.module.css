@@ -1,0 +1,16 @@
+.container{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    text-decoration:none
+    
+}
+.container:hover, .active{
+    box-shadow: 0 0 10px 0 #f1f1f1 inset, 0 0 20px 2px #f1f1f1;
+    border: 3px solid #f1f1f1;
+}
+
+
+

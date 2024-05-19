@@ -1,0 +1,48 @@
+.container {
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    width: 100%;
+    /* From https://css.glass */
+background: rgba(1, 1, 18, 0.69);
+box-shadow: 0 4px 30px rgba(52, 52, 52, 0.1);
+backdrop-filter: blur(8.9px);
+-webkit-backdrop-filter: blur(8.9px);
+border: 1.5px solid rgba(240, 243, 255, 0.09);
+  }
+  
+  .container:hover{
+    /* From https://css.glass */
+background: 06101d;
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8.9px);
+-webkit-backdrop-filter: blur(8.9px);
+border: 1px solid rgba(240, 243, 255, 0.09);
+  }
+  
+  .texts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .number {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  .detail {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  
+  .positive {
+    color: lime;
+  }
+  
+  .negative {
+    color: red;
+  }

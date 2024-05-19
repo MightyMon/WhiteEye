@@ -1,0 +1,16 @@
+.container{
+    align-items: center;
+    height: 40%;
+    /* From https://css.glass */
+background: rgba(4, 2, 30, 0.71);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8.9px);
+-webkit-backdrop-filter: blur(8.9px);
+border: 1px solid rgba(4, 2, 30, 0.09);
+}
+.title{
+    font-weight: 200;
+    color: var(--textSoft);
+    margin-bottom: 20px;
+  }

@@ -1,0 +1,61 @@
+.container{
+    position: sticky;
+    top: 40px;
+}
+
+.user{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 20px;
+    padding: 20px;
+
+}
+.userImage{
+    color: rgb(255, 255, 255);
+    width: 25%;
+    height: auto;
+}
+.userDetails{
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+}
+
+.username{
+    font-weight: 500;
+}
+.userTitle{
+    font-size: 12px;
+    color: var(--textSoft);
+}
+
+.list{
+    list-style: none;
+
+}
+.cat{
+    color: var(--textSoft);
+    font-weight: bold;
+    font-size: 13px;
+    margin: 10px 0px;
+
+}
+.logout{
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    margin: 5px 0px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    width:auto;
+    color: var(--textSoft);
+       /* From https://css.glass */
+    background-color: transparent;
+    width: 100%;
+
+}
