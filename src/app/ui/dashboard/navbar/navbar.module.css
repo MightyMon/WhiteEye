@@ -5,9 +5,9 @@
     justify-content: space-between;
     align-items: center;
    /* From https://css.glass */
-background: rgba(255, 255, 255, 0.12);
+background: rgba(16, 19, 119, 0.12);
 border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+box-shadow: 0 4px 30px rgba(3, 18, 50, 0.1);
 backdrop-filter: blur(8.9px);
 -webkit-backdrop-filter: blur(8.9px);
 }

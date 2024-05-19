@@ -1,7 +1,17 @@
 import Image from "next/image";
+import styles from "./ui/intro.module.css";
 export default function Home() {
   return (
     <>
+    <div className={styles.container}>
+    <div>
+      <a href="login.html">
+        <button>
+          <span className="spanhere">White EYE</span>
+        </button>
+      </a>
+    </div>
+      </div>
       <div className="star"></div>
       <div className="meteor-1"></div>
       <div className="meteor-2"></div>

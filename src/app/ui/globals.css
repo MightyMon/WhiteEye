@@ -22,11 +22,11 @@ a{
 
 
 /* added for background */
-/* html, body {
+html, body {
   height: 100%;
   overflow: hidden;
   background-image: radial-gradient(ellipse at top, #080e21 0%, #0e1013 95%);
-  } */
+  }
   
   .star {
   width: 1px;

@@ -1,0 +1,72 @@
+.container{
+    text-align: center;
+    margin-top: 5%;
+  
+  }
+  #title .spanhere {
+    background: -webkit-linear-gradient(white, #38495a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .buttonhere {
+  border: none;
+  position:static;
+  width: 75%;
+  height:75%;
+  padding: 0;
+  z-index: 2;
+  mask: url("../../../public/eye.svg") 50% 50%;
+  -webkit-mask-size: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  transform: translateY(8px)
+  }
+  
+  .buttonhere:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 4px 0 0 0 rgb(0, 0, 0);
+  transition: all 2s ease;
+  }
+  
+  .buttonhere:hover:after {
+  box-shadow: 0px -80px 50px 30px #000000b2;
+  }
+  
+  .buttonhere spanhere {
+  position: absolute;
+  width: 100%;
+  font-size: 80px;
+  font-weight: 250;
+  left: 50%;
+  top: 50%;
+  letter-spacing: 3px;
+  text-align: center;
+  transform: translate(-50%,-50%);
+  color: rgb(255, 255, 255);
+  transition: all 2s ease;
+  }
+  
+  .buttonhere:hover .spanhere {
+  color: black;
+  }
+  
+  .buttonhere:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s ease;
+  }
+  
+  .buttonhere:hover:before {
+  width: 100%;
+  }
