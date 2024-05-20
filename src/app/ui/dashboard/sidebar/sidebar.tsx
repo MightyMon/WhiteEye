@@ -53,7 +53,10 @@ const menuItems =[
 
 const Sidebar = () => {
     return(
+        
         <div> 
+                    <div className="star"></div>
+
             {/* tbd- add styling for this div  */}
         <div className={styles.container}>
             <div className={styles.user}>

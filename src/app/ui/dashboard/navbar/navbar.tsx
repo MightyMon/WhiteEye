@@ -8,6 +8,7 @@ const Navbar = () => {
     const pathname = usePathname();
 
     return(
+        <div className={styles.containerwrap}>
         <div className={styles.container}>
             <div className={styles.title}>
                 {pathname.split("/").pop()}
@@ -21,6 +22,7 @@ const Navbar = () => {
 
                 </div>
             </div>
+        </div>
         </div>
     )
 }

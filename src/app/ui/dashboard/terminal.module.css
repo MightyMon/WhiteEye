@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the items horizontally */
+    padding: 40px;
+    height: 90%;
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    flex-direction: row; /* Default flex direction */
+
+    background: rgba(128, 130, 194, 0.35);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);}
+
+.terminal {
+    height: 90%; /* This is relative to the parent's height, ensure parent has height defined */
+    width: 900px; /* This will let the width adjust according to content */
+    max-width: 100%; /* Ensure the width does not exceed the*/
+        /* From https://css.glass */
+background: rgba(14, 16, 24, 0.35);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+}
