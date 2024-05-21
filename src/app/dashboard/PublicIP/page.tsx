@@ -123,10 +123,6 @@ const Home = () => {
   return (
     <Container>
       <LogoSection>
-        <img
-          src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
-          alt="google-logo"
-        />
       </LogoSection>
       <SearchSection>
         <Form action="/" method="GET" role="search">

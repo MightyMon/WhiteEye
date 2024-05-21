@@ -38,7 +38,7 @@ export default function SignIn() {
           Sign in
         </Typography>
         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-          <TextField 
+          <TextField className={styles.whitetext}
             margin="normal"
             required
             fullWidth
@@ -47,8 +47,9 @@ export default function SignIn() {
             name="email"
             autoComplete="email"
             autoFocus
+            
           />
-          <TextField
+          <TextField className={styles.whitetext}
             margin="normal"
             required
             fullWidth
@@ -76,11 +77,11 @@ export default function SignIn() {
                 Forgot password?
               </Link>
             </Grid>
-            <Grid item>
+            {/* <Grid item>
               <Link href="#" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Box>
       </Box>
