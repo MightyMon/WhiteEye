@@ -1,91 +1,80 @@
 'use client'
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import styles from "../ui/login/login.module.css"
+import React, { useState, useEffect } from "react";
+import styles from "./Login.module.css"; // Import CSS modules
 
-export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    let formErrors = {};
+
+    if (!username.trim()) {
+      formErrors.username = "Username is required";
+    }
+
+    if (!password.trim()) {
+      formErrors.password = "Password is required";
+    }
+
+    setErrors(formErrors);
+
+    if (Object.keys(formErrors).length === 0) {
+      // **HARDCODED CREDENTIALS **
+      console.log("Login successful! (Hardcoded credentials)");
+      console.log(typeof(username));
+      console.log(password)
+      if (username === 'admin' && password === '1234678') {
+        console.log("Login successful! (Hardcoded credentials)");
+        window.location.href = "https://google.com"; 
+      } else {
+       
+        window.location.href = "/dashboard";
+      }
+      
+    }
   };
 
   return (
-    <div >
-      <div className={styles.reducetop}>
-
+    <div className={styles.container}>
+      <div className="meteor-1"></div>
+      {/* ... other meteor animations (optional) */}
+      <div className={styles.loginpage}>
+        <div className={styles.loginbox}>
+          <h2 className={styles.heading123}>Login</h2>
+          <form onSubmit={handleSubmit}>
+            <div className={styles.inputbox}>
+              <input
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              {errors.username && <p className={styles.error}>{errors.username}</p>}
+            </div>
+            <div className={styles.inputbox}>
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              {errors.password && <p className={styles.error}>{errors.password}</p>}
+            </div>
+            <div className={styles.buttonbox}>
+              <button>Sign In</button>
+            </div>
+            {errors.general && <p className={styles.error}>{errors.general}</p>}
+          </form>
+          {isLoggedIn && <p className={styles.success}>Login successful!</p>}
+        </div>
       </div>
-    <Container component="main" maxWidth="xs" className={styles.maincontainer}>
-      <Box
-        sx={{  
-          marginTop: 8,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Typography component="h1" variant="h5">
-          Sign in
-        </Typography>
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-          <TextField className={styles.whitetext}
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-            
-          />
-          <TextField className={styles.whitetext}
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
-            Sign In
-          </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
-            {/* <Grid item>
-              <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Grid> */}
-          </Grid>
-        </Box>
-      </Box>
-    </Container>
     </div>
   );
-}
+};
+
+export default Login;

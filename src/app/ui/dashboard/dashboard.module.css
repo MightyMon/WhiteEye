@@ -1,8 +1,7 @@
 
 .container{
     display: flex;
-    padding: 20px;
-    
+    padding: 20px; 
 }
 
 .menu{
@@ -24,6 +23,7 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(3.7px);
 -webkit-backdrop-filter: blur(3.7px);
 border: 0px solid rgba(255, 255, 255, 1);
+padding: 20px;
 }
 
 
@@ -31,12 +31,14 @@ border: 0px solid rgba(255, 255, 255, 1);
     display: flex;
     gap: 20;
     margin-top: 20px;
+
 }
 .main{
     flex: 3;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    
 
 }
 .cards{
@@ -46,4 +48,5 @@ border: 0px solid rgba(255, 255, 255, 1);
 }
 .side{
     flex: 1;
+
 }

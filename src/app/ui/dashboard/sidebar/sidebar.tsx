@@ -1,3 +1,4 @@
+'use client'
 import styles from "./sidebar.module.css"
 import 'primeicons/primeicons.css';
 import MenuLink from "./menuLink/menuLink";
@@ -52,6 +53,9 @@ const menuItems =[
 ]
 
 const Sidebar = () => {
+    const handleLogout = () => {
+        
+        window.location.href="http://localhost:3000"      };
     return(
         
         <div> 
@@ -79,7 +83,7 @@ const Sidebar = () => {
       </ul>
       
       
-      <button className={styles.logout}><i className="pi pi-sign-out"></i>Go out</button>
+      <button className={styles.logout}><i className="pi pi-sign-out" onClick={handleLogout}></i>Go out</button>
       
         </div>
         </div>

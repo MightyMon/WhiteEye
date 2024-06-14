@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <div className={`containerhere`}>
         <div className="h-screen">
-          <a href="/dashboard" className="">
+          <a href="/login" className="">
             <button className="buttonhere">
               <span className="spanhere">White Eye</span>
             </button>

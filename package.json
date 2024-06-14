@@ -3,17 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": " next dev ",
+    "build": "prisma generate && build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cron:update-db": "node src/app/service/update-db.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.18",
     "@mui/material": "^5.15.18",
+    "@prisma/client": "^5.15.0",
+    "async": "^3.2.5",
+    "axios": "^1.7.2",
+    "ip-cidr": "^4.0.0",
+    "ip6": "^0.2.10",
+    "mongoose": "^8.4.1",
     "next": "14.2.3",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
+    "ping": "^0.4.4",
     "primeicons": "^7.0.0",
     "primereact": "^10.6.5",
     "react": "^18.3.1",
@@ -25,12 +35,15 @@
     "xterm-react": "^1.0.0"
   },
   "devDependencies": {
+    "@types/async": "^3.2.24",
     "@types/node": "^20",
+    "@types/ping": "^0.4.4",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
+    "prisma": "^5.15.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
