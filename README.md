@@ -36,33 +36,42 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## SQL Setup Guide
+## PostgreSQL Setup Guide
 
-This project uses a SQL database. To set up the database, follow these steps:
+This project uses a PostgreSQL database and Prisma as an ORM. To set up the database using Docker, follow these steps:
 
-1.  Install MySQL:
+1.  Install Docker:
+
+    *   Follow the instructions on the [Docker website](https://docs.docker.com/get-docker/).
+
+2.  Run the PostgreSQL Docker container:
 
     ```bash
-    sudo apt-get update
-    sudo apt-get install mysql-server
+    docker run --name whiteeye-db -e POSTGRES_USER=whiteeye -e POSTGRES_PASSWORD=password -e POSTGRES_DB=whiteeye -p 5432:5432 -d postgres
     ```
 
-2.  Create a database:
+3.  Create the `.env` file:
 
-    ```sql
-    CREATE DATABASE whiteeye;
-    ```
+    *   Create a `.env` file in the root of the project and add the following environment variable:
 
-3.  Create a user and grant privileges:
+        ```
+        DATABASE_URL="postgresql://whiteeye:password@localhost:5432/whiteeye?schema=public"
+        ```
 
-    ```sql
-    CREATE USER 'whiteeye'@'localhost' IDENTIFIED BY 'password';
-    GRANT ALL PRIVILEGES ON whiteeye.* TO 'whiteeye'@'localhost';
-    FLUSH PRIVILEGES;
-    ```
+    *   You can also create an `example.env` file with the same content for other developers to use.
 
-4.  Configure the application to use the database:
+4.  Configure Prisma:
 
-    *   Update the database connection settings in the `.env` file.
+    *   Update the `DATABASE_URL` in the `.env` file to match your PostgreSQL connection settings.
+    *   Run `npx prisma migrate dev` to create the database schema.
+    *   Run `npx prisma generate` to generate the Prisma client.
+
+5.  Connect to the PostgreSQL database:
+
+    *   You can use a PostgreSQL client like `psql` to connect to the database.
+
+6.  Run the application:
+
+    *   Run `npm run dev` to start the development server.
 
 ```
