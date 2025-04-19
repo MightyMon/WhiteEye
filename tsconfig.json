@@ -21,6 +21,22 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/page.tsx", "src/app/dashboard/layout.tsx", "src/app/ui/dashboard/sidebar/sidebar.tsx", "src/app/ui/dashboard/sidebar/menuLink/menuLink.jsx", "src/app/login/page.jsx", "src/app/dashboard/terminal/page.tsx", "src/app/service/ActiveIp.js", "src/app/api/services/route.ts", "src/app/dashboard/IP/page.jsx", "src/app/service/test.ts", "src/app/api/ipLiveChk/route.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/page.tsx",
+    "src/app/dashboard/layout.tsx",
+    "src/app/ui/dashboard/sidebar/sidebar.tsx",
+    "src/app/ui/dashboard/sidebar/menuLink/menuLink.jsx",
+    "src/app/login/page.jsx",
+    "src/app/dashboard/HashConverter/page.jsx",
+    "src/app/service/ActiveIp.js",
+    "src/app/api/services/route.ts",
+    "src/app/dashboard/IP/page.jsx",
+    "src/app/service/test.ts",
+    "src/app/api/ipLiveChk/route.ts"
+  ],
   "exclude": ["node_modules"]
 }

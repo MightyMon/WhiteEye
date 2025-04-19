@@ -1,0 +1,51 @@
+.container{
+    padding: 30px;
+    border-radius:10px ;
+    height: max-content;
+/* From https://css.glass */
+background: rgba(201, 201, 206, 0.07);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(2.6px);
+-webkit-backdrop-filter: blur(2.6px);
+border: 1px solid rgba(10, 13, 48, 0.3);
+}
+.containerwrap{
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+
+.buttonrow {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .leftbutton,
+  .rightbutton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .leftbutton {
+    background-color: #ff2d2d;
+    color: white;
+  }
+  
+  .rightbutton {
+    background-color: #28a745;
+    color: white;
+  }
+  .ReportHeadding{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+    text-decoration-line: underline;
+  }
+  .chartContainer{
+    width: 400px;
+  }

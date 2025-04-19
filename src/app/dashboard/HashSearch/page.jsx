@@ -118,29 +118,31 @@
 
 
 "use client";
-import styles from "./IP.module.css";
+import FileUpload from "@/app/component/FIleUpload";
+import styles from "./HashSearch.module.css";
 import React, { useState } from "react";
 import { IconField } from "primereact/iconfield";
 import { InputText } from "primereact/inputtext";
 import Image from "next/image";
-import "./ipmodule.css";
+import "./hashsearchmodule.css";
 
-export default function IpFetch() {
+export default function HashFetch() {
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
 
-  const validateIPAddress = (ip) => {
-    const pattern =
-      /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
-    return pattern.test(ip);
+  const validateHash = (hash) => {
+    const pattern = /^[a-fA-F0-9]{32}$|^[a-fA-F0-9]{40}$|^[a-fA-F0-9]{64}$/;
+    return pattern.test(hash);
   };
 
   const handleSubmit = (event) => {
-    if (!validateIPAddress(inputValue)) {
+    if (!validateHash(inputValue)) {
       event.preventDefault();
-      setError("Please enter a valid IP address.");
+      setError("Please enter a valid MD5, SHA-1, or SHA-256 hash.");
     } else {
       setError("");
+      // Add your logic here to handle the hash data
+      console.log("Valid hash:", inputValue);
     }
   };
 
@@ -166,7 +168,7 @@ export default function IpFetch() {
       <div className={styles.container}>
         <div className={styles.ColumnFlex}>
           <div className={styles.imgLogo}>
-            <Image src="/IPSearch.svg" layout="fill" alt="IP Search Logo" />
+            <Image src="/hashsearch.svg" layout="fill" alt="hash Search Logo" />
           </div>
 
           <div>
@@ -179,12 +181,12 @@ export default function IpFetch() {
                 borderRadius: "10px",
               }}
             >
-              <form action="IP/IPreport" method="get" onSubmit={handleSubmit}>
+              <form action="HashSearch/HashReport" method="get" onSubmit={handleSubmit}>
                 <div className="flex justify-content-end">
                   <IconField iconPosition="left" className="search">
                     <InputText
-                      name="ip"
-                      placeholder="IP address to get data"
+                      name="hash"
+                      placeholder="Hash to get data"
                       className="input"
                       value={inputValue}
                       onChange={(e) => setInputValue(e.target.value)}
