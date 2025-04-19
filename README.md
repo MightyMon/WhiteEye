@@ -35,3 +35,34 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## SQL Setup Guide
+
+This project uses a SQL database. To set up the database, follow these steps:
+
+1.  Install MySQL:
+
+    ```bash
+    sudo apt-get update
+    sudo apt-get install mysql-server
+    ```
+
+2.  Create a database:
+
+    ```sql
+    CREATE DATABASE whiteeye;
+    ```
+
+3.  Create a user and grant privileges:
+
+    ```sql
+    CREATE USER 'whiteeye'@'localhost' IDENTIFIED BY 'password';
+    GRANT ALL PRIVILEGES ON whiteeye.* TO 'whiteeye'@'localhost';
+    FLUSH PRIVILEGES;
+    ```
+
+4.  Configure the application to use the database:
+
+    *   Update the database connection settings in the `.env` file.
+
+```
